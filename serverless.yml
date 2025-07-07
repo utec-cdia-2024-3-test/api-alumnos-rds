@@ -15,7 +15,7 @@ provider:
     DB_NAME: ${sls:stage}
 
 functions:
-  scrape_table:
+  listar:
     handler: ListarAlumnos.lambda_handler
     package:
       include:

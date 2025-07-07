@@ -16,13 +16,11 @@ def lambda_handler(event, context):
         WithDecryption=True  # Si es un parámetro seguro
     )
     host = response['Parameter']['Value']
-    print(f"host: {host}") 
     response = ssm.get_parameter(
         Name=SSM_password,
         WithDecryption=True  # Si es un parámetro seguro
     )
     password = response['Parameter']['Value']
-    print(f"password: {password}") 
 
     try:
         connection = pymysql.connect(
